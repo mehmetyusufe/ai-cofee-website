@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Özel Menü | Yusuf Caffee</title>
+  <meta name="description" content="Yusuf Caffee Nitelikli Kahve Menüsü - Single origin çekirdekler, el demlemeleri, taze espresso çeşitleri ve fırından sıcak artisan lezzetler.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 151, 85, 0.12) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .menu-page-container {
+      padding: 60px 0 100px;
+    }
+    .menu-legend-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+          <li><a href="menu.html" class="nav-link active">Özel Menü</a></li>
+          <li><a href="about.html" class="nav-link">Hikayemiz</a></li>
+          <li><a href="contact.html" class="nav-link">Rezervasyon & İletişim</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="nav-status-badge" id="liveCafeStatus">
+          <span class="status-dot"></span>
+          <span>Açık (23:00'a kadar)</span>
+        </div>
+
+        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Sepeti Aç">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+        </button>
+
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Menüyü Göster">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero reveal">
+    <div class="container">
+      <div class="section-badge">Zanaatkar Seçkisi</div>
+      <h1>Özel Nitelikli <span class="text-gold-gradient">Kahve Menüsü</span></h1>
+      <p>Hasat yılı taze olan mikro-lot çekirdekler, hassas ısı profilleriyle günlük kavrulur ve ustalıkla sunulur.</p>
+    </div>
+  </section>
+
+  <!-- ================= MENU PAGE BODY ================= -->
+  <main class="menu-page-container">
+    <div class="container">
+      
+      <!-- Legend Bar -->
+      <div class="menu-legend-bar reveal delay-1">
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #e2b170;"></span>
+          <span>Açık Kavrum (Meyvemsi / Çiçeksi)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #b26829;"></span>
+          <span>Orta Kavrum (Dengeli / Karamel)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #603719;"></span>
+          <span>Koyu Kavrum (Çikolata / Baharat)</span>
+        </div>
+        <div class="legend-item">
+          <span style="color:var(--accent-gold);">🌾</span>
+          <span>Yulaf & Badem Sütü Mevcut</span>
+        </div>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="category-tabs reveal delay-2">
+        <button class="tab-btn active" data-filter="all">Tümü (12)</button>
+        <button class="tab-btn" data-filter="espresso">Espresso Klasikleri</button>
+        <button class="tab-btn" data-filter="filter">Demleme & Drip</button>
+        <button class="tab-btn" data-filter="cold">Soğuk & Nitro</button>
+        <button class="tab-btn" data-filter="bakery">Fırın & Tatlı</button>
+      </div>
+
+      <!-- Full Menu Grid -->
+      <div class="menu-cards-grid">
+
+        <!-- Item 1 -->
+        <article class="menu-card reveal" data-category="espresso" data-item-id="espresso-single" data-item-name="Single Origin Espresso" data-item-price="105" data-item-img="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Klasik</span>
+            <span class="roast-badge">Orta-Koyu</span>
+            <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=600&q=80" alt="Espresso" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Single Origin Espresso</h3>
+              <span class="menu-item-price">₺105</span>
+            </div>
+            <p class="menu-item-desc">Brezilya Cerrado bölgesinden doğal işlenmiş çekirdek. Yoğun altın krema, fındık ve kakao bitişli.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Kakao</span>
+              <span class="flavor-pill">Fındık Ezmesi</span>
+              <span class="flavor-pill">9 Bar</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="menu-card reveal" data-category="espresso" data-item-id="cortado" data-item-name="Artisan Cortado" data-item-price="130" data-item-img="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">1:1 Oran</span>
+            <span class="roast-badge">Orta Kavrum</span>
+            <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80" alt="Cortado" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Artisan Cortado</h3>
+              <span class="menu-item-price">₺130</span>
+            </div>
+            <p class="menu-item-desc">Eşit miktarda espresso ve buharla kadifemsi kıvama getirilmiş sıcak süt. Asiditeyi dengeler.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Dengeli</span>
+              <span class="flavor-pill">Karamel</span>
+              <span class="flavor-pill">İspanyol Reçetesi</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="menu-card reveal" data-category="espresso" data-item-id="cappuccino-dry" data-item-name="Roma Style Cappuccino" data-item-price="135" data-item-img="assets/images/hero-coffee.jpg">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Zanaatkar Latte Art</span>
+            <span class="roast-badge">Orta Kavrum</span>
+            <img src="assets/images/hero-coffee.jpg" alt="Cappuccino" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Roma Style Cappuccino</h3>
+              <span class="menu-item-price">₺135</span>
+            </div>
+            <p class="menu-item-desc">Kalın ve yoğun mikro-köpük tabakası, üzerine hafif rendelenmiş Madagaskar vanilyası çekirdeği.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Yoğun Köpük</span>
+              <span class="flavor-pill">Vanilya</span>
+              <span class="flavor-pill">Tereyağlı Bitiş</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="menu-card reveal" data-category="filter" data-item-id="ethiopia-yirgacheffe" data-item-name="Etiyopya Yirgacheffe V60" data-item-price="165" data-item-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Çiçeksi Aroma</span>
+            <span class="roast-badge">Açık Kavrum</span>
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="V60" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Etiyopya Yirgacheffe V60</h3>
+              <span class="menu-item-price">₺165</span>
+            </div>
+            <p class="menu-item-desc">Yüksek irtifa yıkanmış çekirdek. Yasemin çiçekleri, tatlı limon asiditesi ve çay kıvamında berrak içim.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Yasemin</span>
+              <span class="flavor-pill">Limon Otu</span>
+              <span class="flavor-pill">Şeftali</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="menu-card reveal" data-category="filter" data-item-id="guatemala-aeropress" data-item-name="Guatemala Antigua Aeropress" data-item-price="160" data-item-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Hava Basınçlı</span>
+            <span class="roast-badge">Orta Kavrum</span>
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Aeropress" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Guatemala Antigua Aeropress</h3>
+              <span class="menu-item-price">₺160</span>
+            </div>
+            <p class="menu-item-desc">Volkanik toprakta yetişen çekirdekler. Doygun gövde, baharatlı çikolata ve esmer şeker tatlılığı.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Koyu Çikolata</span>
+              <span class="flavor-pill">Esmer Şeker</span>
+              <span class="flavor-pill">Tarçın</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6 -->
+        <article class="menu-card reveal" data-category="filter" data-item-id="syphon-geisha" data-item-name="Panama Geisha Syphon (Özel Rezerv)" data-item-price="260" data-item-img="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Ultra Rezerv</span>
+            <span class="roast-badge">Açık Kavrum</span>
+            <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=600&q=80" alt="Syphon" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Panama Geisha Syphon</h3>
+              <span class="menu-item-price">₺260</span>
+            </div>
+            <p class="menu-item-desc">Vakum ve buhar basıncıyla demlenen dünyanın en prestijli kahve varyetesi. Olağanüstü çiçeksi zarafet.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Orkide</span>
+              <span class="flavor-pill">Tropik Meyve</span>
+              <span class="flavor-pill">İpeksi Doku</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 7 -->
+        <article class="menu-card reveal" data-category="cold" data-item-id="espresso-tonic" data-item-name="Yuzu Espresso Tonic" data-item-price="165" data-item-img="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Ferahlatıcı</span>
+            <span class="roast-badge">Buzlu</span>
+            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80" alt="Espresso Tonic" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Yuzu Espresso Tonic</h3>
+              <span class="menu-item-price">₺165</span>
+            </div>
+            <p class="menu-item-desc">Özel hazırlanmış Japon narenciyesi Yuzu özütü, artisanal tonik suyu ve taze çift shot espresso katmanı.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Yuzu</span>
+              <span class="flavor-pill">Ferah Tonik</span>
+              <span class="flavor-pill">Katmanlı Görsel</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 8 -->
+        <article class="menu-card reveal" data-category="cold" data-item-id="iced-spanish" data-item-name="Iced Pistachio Latte" data-item-price="175" data-item-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Gurme İçecek</span>
+            <span class="roast-badge">Antep Fıstığı</span>
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80" alt="Pistachio Latte" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Iced Pistachio Latte</h3>
+              <span class="menu-item-price">₺175</span>
+            </div>
+            <p class="menu-item-desc">%100 saf Antep fıstığı ezmesi, soğuk süt köpüğü ve yoğun espresso shot'ı ile zengin bir lezzet.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Antep Fıstığı</span>
+              <span class="flavor-pill">Yoğun Krema</span>
+              <span class="flavor-pill">Tatlı Bitiş</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 9 -->
+        <article class="menu-card reveal" data-category="cold" data-item-id="affogato" data-item-name="Artisan Gelato Affogato" data-item-price="150" data-item-img="https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Tatlı & Kahve</span>
+            <span class="roast-badge">İtalyan Gelato</span>
+            <img src="https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&w=600&q=80" alt="Affogato" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Artisan Gelato Affogato</h3>
+              <span class="menu-item-price">₺150</span>
+            </div>
+            <p class="menu-item-desc">Özel Madagaskar vanilyalı fior di latte dondurması üzerine dökülen taze, sıcak ve kremamsı ristretto shot.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Sıcak-Soğuk Kontrastı</span>
+              <span class="flavor-pill">Vanilya</span>
+              <span class="flavor-pill">Kremamsı</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 10 -->
+        <article class="menu-card reveal" data-category="bakery" data-item-id="croissant-butter" data-item-name="Fransız Tereyağlı Kruvasan" data-item-price="120" data-item-img="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Fırından Taze</span>
+            <span class="roast-badge">Fransız Tereyağı</span>
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Croissant" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Fransız Tereyağlı Kruvasan</h3>
+              <span class="menu-item-price">₺120</span>
+            </div>
+            <p class="menu-item-desc">72 katmanlı el açması hamur, özel Fransız tereyağı ile fırınlanmış çıtır dış kabuk ve havadar iç doku.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Çıtır Katlar</span>
+              <span class="flavor-pill">Fransız Tereyağı</span>
+              <span class="flavor-pill">Hafif Tatlı</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 11 -->
+        <article class="menu-card reveal" data-category="bakery" data-item-id="almond-croissant" data-item-name="Badem Kremalı Kruvasan" data-item-price="145" data-item-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Özel Dolgulu</span>
+            <span class="roast-badge">Frangipane Dolgu</span>
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Almond Croissant" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Badem Kremalı Kruvasan</h3>
+              <span class="menu-item-price">₺145</span>
+            </div>
+            <p class="menu-item-desc">Zengin badem frangipane kremasıyla doldurulup üzeri kavrulmuş file bademlerle fırınlanmış gurme lezzet.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">File Badem</span>
+              <span class="flavor-pill">Frangipane</span>
+              <span class="flavor-pill">Pudra Şekeri</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 12 -->
+        <article class="menu-card reveal" data-category="bakery" data-item-id="matcha-cookie" data-item-name="Japon Matcha & Beyaz Çikolata Cookie" data-item-price="95" data-item-img="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Seremoniyel Matcha</span>
+            <span class="roast-badge">Akışkan İçi</span>
+            <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80" alt="Cookie" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Matcha & Beyaz Çikolatalı Cookie</h3>
+              <span class="menu-item-price">₺95</span>
+            </div>
+            <p class="menu-item-desc">Kyoto'dan seremoniyel sınıf yeşil çay tozu ve İsviçre beyaz çikolata parçacıkları ile yumuşak dokulu taze kurabiye.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Uji Matcha</span>
+              <span class="flavor-pill">Beyaz Çikolata</span>
+              <span class="flavor-pill">Deniz Tuzu</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= CART DRAWER ================= -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Alışveriş Sepeti">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        Sipariş Sepetiniz
+      </h3>
+      <button class="close-cart-btn" id="closeCartBtn" aria-label="Sepeti Kapat">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Ara Toplam:</span>
+        <span id="cartSubtotal">₺0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>KDV (%10 Dahil):</span>
+        <span>Dahil</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Toplam Tutar:</span>
+        <span id="cartTotal" class="text-gold-gradient">₺0.00</span>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+        Siparişi Tamamla & Masaya Çağır
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+            </svg>
+            <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+          </a>
+          <p>Her yudumda tarladan fincana uzanan saygı ve tutkuyu hissedin.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Sayfalar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="menu.html">Kahve Menüsü</a></li>
+            <li><a href="about.html">Kavurma Hikayemiz</a></li>
+            <li><a href="contact.html">Masa Rezervasyonu</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Çalışma Saatleri</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Hafta içi: 08:00 - 23:00<br>Hafta sonu: 08:30 - 23:30</p>
+        </div>
+        <div class="footer-col">
+          <h4>Bülten</h4>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="E-posta" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary btn-sm">Katıl</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yusuf Caffee. Tüm hakları saklıdır. Bu proje konsept portfolyo tasarımıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

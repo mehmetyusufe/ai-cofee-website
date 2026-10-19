@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hikayemiz & Kavurma Felsefemiz | Yusuf Caffee</title>
+  <meta name="description" content="Yusuf Caffee'nin kökleri, SCA sertifikalı kavurma standartları, doğrudan ticaret felsefesi ve baristalarımızın hikayesi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 151, 85, 0.12) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .process-steps-section {
+      padding: 90px 0;
+    }
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .process-step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
+      position: relative;
+      transition: transform var(--transition-smooth);
+    }
+    .process-step-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-focus);
+    }
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .process-step-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+    .process-step-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .team-section {
+      padding: 90px 0;
+      background: rgba(22, 18, 13, 0.4);
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-align: center;
+      transition: transform var(--transition-smooth);
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent-gold);
+    }
+    .team-img-wrap {
+      height: 280px;
+      overflow: hidden;
+    }
+    .team-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .team-card:hover .team-img-wrap img {
+      transform: scale(1.05);
+    }
+    .team-info {
+      padding: 24px;
+    }
+    .team-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+    .team-info span {
+      color: var(--accent-gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .team-info p {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+          <li><a href="menu.html" class="nav-link">Özel Menü</a></li>
+          <li><a href="about.html" class="nav-link active">Hikayemiz</a></li>
+          <li><a href="contact.html" class="nav-link">Rezervasyon & İletişim</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="nav-status-badge" id="liveCafeStatus">
+          <span class="status-dot"></span>
+          <span>Açık (23:00'a kadar)</span>
+        </div>
+
+        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Sepeti Aç">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+        </button>
+
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Menüyü Göster">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero reveal">
+    <div class="container">
+      <div class="section-badge">Tarladan Fincana</div>
+      <h1>Zanaatkar Kavurma <span class="text-gold-gradient">& Tutkumuz</span></h1>
+      <p>Gerçek kahve deneyimi, çekirdeğin doğduğu toprağa saygı duymak ve onu yakmadan karakterini açığa çıkarmakla başlar.</p>
+    </div>
+  </section>
+
+  <!-- ================= STORY DEEP-DIVE ================= -->
+  <section class="story-section">
+    <div class="container story-grid reveal">
+      <div class="story-img-collage">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Specialty Coffee Counter Yusuf Caffee" class="story-main-img">
+        <div class="story-stat-card">
+          <h3>85+ SCA</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-top:4px;">Asgari Nitelikli Puan Şartı</p>
+        </div>
+      </div>
+
+      <div class="story-content">
+        <div class="section-badge">Felsefemiz</div>
+        <h2>Kahvenin Meyve Kökenini <span class="text-gold-gradient">Yeniden Keşfetmek</span></h2>
+        <p>
+          Çoğu insan kahveyi acı, koyu ve uykuyu kaçıran bir sıvı olarak tanır. Ancak kahve aslında bir ağacın parlak kırmızı meyvesidir (kiraz). Doğru işlendiğinde ve zanaatkar ellerde hafif-orta kavrulduğunda içinde çilek, yasemin, yaban mersini ve bergamot notaları taşır.
+        </p>
+        <p>
+          Yusuf Caffee olarak, tarlalarda emeği geçen çiftçilere hak ettikleri değeri ödeyerek "Direct Trade" (Doğrudan Ticaret) protokolü uyguluyoruz.
+        </p>
+        <div class="story-points">
+          <div class="story-point-item">
+            <div class="point-icon">✓</div>
+            <div>
+              <strong>Şeffaf Tedarik Zinciri:</strong>
+              <p style="color:var(--text-dim); font-size:0.85rem;">Hangi çiftlikte, hangi rakımda, ne zaman hasat edildiğini her pakette belirtiyoruz.</p>
+            </div>
+          </div>
+          <div class="story-point-item">
+            <div class="point-icon">✓</div>
+            <div>
+              <strong>Çevre Dostu Ambalajlar:</strong>
+              <p style="color:var(--text-dim); font-size:0.85rem;">Doğada çözünebilen ve aroma valfli biyo-bozunur paketler kullanıyoruz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS TIMELINE ================= -->
+  <section class="process-steps-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Üretim Döngümüz</div>
+        <h2>Kusursuz Bir Fincanın <span class="text-gold-gradient">4 Aşaması</span></h2>
+        <p>Her partide mikronluk hassasiyet ve duyusal analizlerle standart kaliteyi koruyoruz.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step-card reveal delay-1">
+          <div class="step-number">01</div>
+          <h3>Yeşil Çekirdek Seçimi</h3>
+          <p>Yalnızca 1400 metre üzeri yüksek rakımlarda yetişen, el ile toplanmış 85+ SCA puanlı mikro-lot Arabica partileri seçilir.</p>
+        </div>
+
+        <div class="process-step-card reveal delay-2">
+          <div class="step-number">02</div>
+          <h3>Profil Kavurma (Roasting)</h3>
+          <p>Özel tamburlu zanaatkar kavurma makinemizde her orijin için ayrı ısı eğrisi (Roast Profile) oluşturularak meyve asiditesi korunur.</p>
+        </div>
+
+        <div class="process-step-card reveal delay-3">
+          <div class="step-number">03</div>
+          <h3>Cupping & Tadım Testi</h3>
+          <p>Her partiden alınan örnekler Q-Grader sertifikalı baş baristamız tarafından kör tadım masasında lezzet testine tabi tutulur.</p>
+        </div>
+
+        <div class="process-step-card reveal delay-4">
+          <div class="step-number">04</div>
+          <h3>Taze Öğütüm & Sunum</h3>
+          <p>Ekstraksiyondan hemen saniyeler önce hassas profesyonel değirmenlerde mikron seviyesinde öğütülüp ideal mineral suyumuzla demlenir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MEET THE TEAM ================= -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Atölye Ekibi</div>
+        <h2>Tutkulu <span class="text-gold-gradient">Baristalarımız</span></h2>
+        <p>Her gün bardağınıza lezzet katan uzman ekibimizle tanışın.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card reveal delay-1">
+          <div class="team-img-wrap">
+            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80" alt="Head Roaster" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Emre</h3>
+            <span>Kurucu & Head Roaster (Q-Grader)</span>
+            <p>12 yıldır kahve kavurma eğrileri ve fermantasyon deneyleri üzerine çalışıyor.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Lead Barista" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Deniz</h3>
+            <span>Baş Barista & Sensory Trainer</span>
+            <p>Türkiye Barista Şampiyonası finalisti, latte art ve duyusal tadım eğitimlerini yönetiyor.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="Pastry Chef" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Melis</h3>
+            <span>Artisan Pastry Şefi</span>
+            <p>Uluslararası pastacılık akademisi mezunu; kruvasanlarımız ve taze San Sebastian keklerimizin yaratıcısı.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CART DRAWER ================= -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Alışveriş Sepeti">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        Sipariş Sepetiniz
+      </h3>
+      <button class="close-cart-btn" id="closeCartBtn" aria-label="Sepeti Kapat">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Ara Toplam:</span>
+        <span id="cartSubtotal">₺0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>KDV (%10 Dahil):</span>
+        <span>Dahil</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Toplam Tutar:</span>
+        <span id="cartTotal" class="text-gold-gradient">₺0.00</span>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+        Siparişi Tamamla & Masaya Çağır
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+            </svg>
+            <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+          </a>
+          <p>Kahvenin doğasına saygı, insana ve toprağa adalet.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Sayfalar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="menu.html">Kahve Menüsü</a></li>
+            <li><a href="about.html">Kavurma Hikayemiz</a></li>
+            <li><a href="contact.html">Masa Rezervasyonu</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Çalışma Saatleri</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Hafta içi: 08:00 - 23:00<br>Hafta sonu: 08:30 - 23:30</p>
+        </div>
+        <div class="footer-col">
+          <h4>Bülten</h4>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="E-posta" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary btn-sm">Katıl</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yusuf Caffee. Tüm hakları saklıdır. Bu proje konsept portfolyo tasarımıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

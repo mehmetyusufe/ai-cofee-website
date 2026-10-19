@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yusuf Caffee | Özel Nitelikli Kahve & Kavurma Atölyesi</title>
+  <meta name="description" content="Yusuf Caffee - Dünyanın en iyi tarlalarından özenle toplanan nitelikli kahve çekirdekleri, zanaatkar kavurma teknikleri ve kusursuz demleme deneyimi.">
+  <meta name="keywords" content="nitelikli kahve, specialty coffee, roastery, v60 demleme, espresso, cold brew, üçüncü nesil kahve">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
+          <li><a href="menu.html" class="nav-link">Özel Menü</a></li>
+          <li><a href="about.html" class="nav-link">Hikayemiz</a></li>
+          <li><a href="contact.html" class="nav-link">Rezervasyon & İletişim</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="nav-status-badge" id="liveCafeStatus">
+          <span class="status-dot"></span>
+          <span>Açık (23:00'a kadar)</span>
+        </div>
+
+        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Sepeti Aç">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+        </button>
+
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Menüyü Göster">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" id="heroSection">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="section-badge">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.5-6.2 4.5 2.3-7.3-6.1-4.5h7.6z"/></svg>
+          Nitelikli Çekirdek & Zanaatkar Kavrum
+        </div>
+        <h1 class="hero-title">
+          Her Damlasında <br>
+          <span class="text-gold-gradient">Mükemmel Uyum</span> ve Tutku.
+        </h1>
+        <p class="hero-description">
+          Dünyanın seçkin mikro-lot çiftliklerinden doğrudan temin edilen Arabica çekirdeklerini, Yusuf Caffee atölyemizde profillendirip taze demliyoruz. Gerçek kahve zarafetini keşfedin.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#menuSection" class="btn btn-primary" id="exploreMenuCta">
+            Menüyü İncele
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#reservationSection" class="btn btn-outline" id="bookTableCta">
+            Masa Ayırt
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>%100</h3>
+            <p>Single Origin Arabica</p>
+          </div>
+          <div class="stat-item">
+            <h3>18+</h3>
+            <p>Küresel Mikro-Lot Çiftlik</p>
+          </div>
+          <div class="stat-item">
+            <h3>4.9★</h3>
+            <p>Müşteri Memnuniyeti</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-wrapper">
+        <div class="hero-image-card">
+          <img src="assets/images/hero-coffee.jpg" alt="Yusuf Caffee Artisan Latte Art Coffee" loading="eager">
+          
+          <div class="floating-glass-badge badge-top-right">
+            <div class="floating-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Günlük Taze Kavrum</h4>
+              <p>Maksimum 48 Saatlik Dinlenme</p>
+            </div>
+          </div>
+
+          <div class="floating-glass-badge badge-bottom-left">
+            <div class="floating-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>SCA Sertifikalı</h4>
+              <p>Ödüllü Master Baristalar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INFINITE MARQUEE TICKER RIBBON ================= -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-item"><span>★</span> SINGLE ORIGIN ETHIOPIA YIRGACHEFFE</div>
+      <div class="marquee-item"><span>★</span> COLOMBIA HUILA SPECIALTY</div>
+      <div class="marquee-item"><span>★</span> 18-SAAT NITRO COLD BREW</div>
+      <div class="marquee-item"><span>★</span> ZANAATKAR MİKRO-KAVRUM ATÖLYESİ</div>
+      <div class="marquee-item"><span>★</span> SCA 85+ PUAN GARANTİSİ</div>
+      <div class="marquee-item"><span>★</span> HER SABAH TAZE FIRIN KRUVASAN</div>
+      <div class="marquee-item"><span>★</span> DIRECT TRADE ÇİFTLİKLER</div>
+      <!-- Loop duplicate -->
+      <div class="marquee-item"><span>★</span> SINGLE ORIGIN ETHIOPIA YIRGACHEFFE</div>
+      <div class="marquee-item"><span>★</span> COLOMBIA HUILA SPECIALTY</div>
+      <div class="marquee-item"><span>★</span> 18-SAAT NITRO COLD BREW</div>
+      <div class="marquee-item"><span>★</span> ZANAATKAR MİKRO-KAVRUM ATÖLYESİ</div>
+      <div class="marquee-item"><span>★</span> SCA 85+ PUAN GARANTİSİ</div>
+      <div class="marquee-item"><span>★</span> HER SABAH TAZE FIRIN KRUVASAN</div>
+      <div class="marquee-item"><span>★</span> DIRECT TRADE ÇİFTLİKLER</div>
+    </div>
+  </div>
+
+  <!-- ================= FEATURES STRIP ================= -->
+  <section class="features-strip">
+    <div class="container features-grid">
+      <div class="feature-box reveal delay-1">
+        <div class="feature-icon-wrapper">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </div>
+        <div>
+          <h4>Doğrudan Ticaret</h4>
+          <p>Çiftçiyi destekleyen adil alım</p>
+        </div>
+      </div>
+
+      <div class="feature-box reveal delay-2">
+        <div class="feature-icon-wrapper">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        </div>
+        <div>
+          <h4>Zanaatkar Demleme</h4>
+          <p>V60, Chemex, Aeropress & Syphon</p>
+        </div>
+      </div>
+
+      <div class="feature-box reveal delay-3">
+        <div class="feature-icon-wrapper">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div>
+          <h4>Hızlı & Taze Servis</h4>
+          <p>Anında taze öğütüm ve sunum</p>
+        </div>
+      </div>
+
+      <div class="feature-box reveal delay-4">
+        <div class="feature-icon-wrapper">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        </div>
+        <div>
+          <h4>Artisan Fırın</h4>
+          <p>Her sabah pişen taze kruvasanlar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE MENU SECTION ================= -->
+  <section class="menu-section" id="menuSection">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Barista Seçimleri</div>
+        <h2>Özenle Hazırlanan <span class="text-gold-gradient">İmza Lezzetler</span></h2>
+        <p>Her yudumda dengeli asidite, zengin gövde ve katmanlı aroma profillerini keşfedin.</p>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="category-tabs reveal delay-1">
+        <button class="tab-btn active" data-filter="all">Tüm Lezzetler</button>
+        <button class="tab-btn" data-filter="espresso">Espresso Bazlı</button>
+        <button class="tab-btn" data-filter="filter">Demleme & Filtre</button>
+        <button class="tab-btn" data-filter="cold">Soğuk & Ferah</button>
+        <button class="tab-btn" data-filter="bakery">Artisan Tatlılar</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-cards-grid" id="menuGrid">
+        
+        <!-- Item 1 -->
+        <article class="menu-card reveal delay-1" data-category="espresso" data-item-id="flat-white" data-item-name="Velvet Flat White" data-item-price="135" data-item-img="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Çok Satan</span>
+            <span class="roast-badge">Orta Kavrum</span>
+            <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=600&q=80" alt="Velvet Flat White" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Velvet Flat White</h3>
+              <span class="menu-item-price">₺135</span>
+            </div>
+            <p class="menu-item-desc">Çift shot ristretto ve mikro köpürtülmüş ipeksi tam yağlı süt. Yoğun kahve aroması.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Fındık</span>
+              <span class="flavor-pill">Karamel</span>
+              <span class="flavor-pill">İpeksi Süt</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="menu-card reveal delay-2" data-category="filter" data-item-id="ethiopia-v60" data-item-name="Etiyopya Yirgacheffe V60" data-item-price="165" data-item-img="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Single Origin</span>
+            <span class="roast-badge">Açık Kavrum</span>
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Etiyopya V60" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Etiyopya Yirgacheffe V60</h3>
+              <span class="menu-item-price">₺165</span>
+            </div>
+            <p class="menu-item-desc">Özel V60 ile zanaatkar el demlemesi. Parlak narenciye ve yasemin çiçeği aromaları.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Yasemin</span>
+              <span class="flavor-pill">Bergamot</span>
+              <span class="flavor-pill">Şeftali</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="menu-card reveal delay-3" data-category="cold" data-item-id="nitro-cold-brew" data-item-name="Nitro Cold Brew" data-item-price="155" data-item-img="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">İmza Reçete</span>
+            <span class="roast-badge">18 Saat Demleme</span>
+            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80" alt="Nitro Cold Brew" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Nitro Cold Brew</h3>
+              <span class="menu-item-price">₺155</span>
+            </div>
+            <p class="menu-item-desc">Nitrojen gazı ile köpürtülmüş, kadifemsi kremalı buz gibi soğuk kahve deneyimi.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Bitter Çikolata</span>
+              <span class="flavor-pill">Düşük Asidite</span>
+              <span class="flavor-pill">Kadife Köpük</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="menu-card reveal delay-1" data-category="espresso" data-item-id="spanish-latte" data-item-name="Golden Spanish Latte" data-item-price="145" data-item-img="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Tatlı Dokunuş</span>
+            <span class="roast-badge">Orta-Koyu</span>
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80" alt="Spanish Latte" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Golden Spanish Latte</h3>
+              <span class="menu-item-price">₺145</span>
+            </div>
+            <p class="menu-item-desc">Özel kondanse süt, taze çift shot espresso ve tarçın çubuğu esansı ile dengelenmiş zengin tat.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Kondanse Süt</span>
+              <span class="flavor-pill">Vanilya</span>
+              <span class="flavor-pill">Karamel</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="menu-card reveal delay-2" data-category="filter" data-item-id="colombia-chemex" data-item-name="Kolombiya Huila Chemex" data-item-price="170" data-item-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Berrak Gövde</span>
+            <span class="roast-badge">Orta Kavrum</span>
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Chemex Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">Kolombiya Huila Chemex</h3>
+              <span class="menu-item-price">₺170</span>
+            </div>
+            <p class="menu-item-desc">Özel kalın filtreli Chemex demleme. Ağır tortulardan arındırılmış, tatlı ve dengeli bitiş.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Kırmızı Elma</span>
+              <span class="flavor-pill">Bal</span>
+              <span class="flavor-pill">Fındık</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 6 -->
+        <article class="menu-card reveal delay-3" data-category="bakery" data-item-id="san-sebastian" data-item-name="San Sebastián & Belçika Çikolatası" data-item-price="180" data-item-img="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80">
+          <div class="menu-card-img-wrap">
+            <span class="card-tag">Şefin Spesiyali</span>
+            <span class="roast-badge">Günlük Taze</span>
+            <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" alt="San Sebastian Cheesecake" loading="lazy">
+          </div>
+          <div class="menu-card-body">
+            <div class="card-title-row">
+              <h3 class="menu-item-title">San Sebastián Cheesecake</h3>
+              <span class="menu-item-price">₺180</span>
+            </div>
+            <p class="menu-item-desc">Akışkan kıvamlı Bask usulü fırınlanmış cheesecake, sıcak artisan Belçika çikolatası sosu ile.</p>
+            <div class="flavor-notes">
+              <span class="flavor-pill">Kremamsı</span>
+              <span class="flavor-pill">Karamelize</span>
+              <span class="flavor-pill">Belçika Çikolatası</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add-cart">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <a href="menu.html" class="btn btn-outline" id="viewFullMenuBtn">
+          Tüm Detaylı Menüyü Görüntüle (24+ Çeşit)
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COFFEE QUIZ / INTERACTIVE FLAVOR FINDER ================= -->
+  <section class="flavor-finder-section" id="quizSection">
+    <div class="container">
+      <div class="finder-container-card reveal">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <div class="section-badge">Akıllı Eşleştirme</div>
+          <h2>Damak Tadına Uygun <span class="text-gold-gradient">Kahveni Bul</span></h2>
+          <p>Tercihlerini seç, SCA sertifikalı baristalarımızın sana özel önerisini keşfet.</p>
+        </div>
+
+        <form id="coffeeQuizForm" onsubmit="event.preventDefault();">
+          <div class="finder-steps-grid">
+            
+            <div class="finder-step-box">
+              <h4>1. Kahve Nasıl Olsun?</h4>
+              <div class="quiz-options">
+                <label class="quiz-option-label">
+                  <input type="radio" name="preference" value="hot-black" checked>
+                  <span>Sade & Sıcak</span>
+                </label>
+                <label class="quiz-option-label">
+                  <input type="radio" name="preference" value="milk">
+                  <span>Sütlü & Kremamsı</span>
+                </label>
+                <label class="quiz-option-label">
+                  <input type="radio" name="preference" value="cold">
+                  <span>Buzlu & Ferah</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="finder-step-box">
+              <h4>2. Tercih Ettiğin Gövde & Tat?</h4>
+              <div class="quiz-options">
+                <label class="quiz-option-label">
+                  <input type="radio" name="body" value="chocolate" checked>
+                  <span>Çikolata & Karamel</span>
+                </label>
+                <label class="quiz-option-label">
+                  <input type="radio" name="body" value="fruity">
+                  <span>Meyvemsi & Çiçeksi</span>
+                </label>
+                <label class="quiz-option-label">
+                  <input type="radio" name="body" value="nutty">
+                  <span>Fındık & Baharat</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="finder-step-box">
+              <h4>3. Yoğunluk Seviyesi</h4>
+              <div class="quiz-options">
+                <label class="quiz-option-label">
+                  <input type="radio" name="intensity" value="medium" checked>
+                  <span>Dengeli & Yumuşak</span>
+                </label>
+                <label class="quiz-option-label">
+                  <input type="radio" name="intensity" value="strong">
+                  <span>Sert & Uyandırıcı</span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="quiz-result-box active" id="quizResultBox">
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-gold); font-weight: 700;">Senin İçin Mükemmel Eşleşme</span>
+            <h3 id="quizResultTitle" style="font-size: 1.6rem; margin: 8px 0;">Double Origin Espresso</h3>
+            <p id="quizResultDesc" style="color: var(--text-muted); font-size: 0.92rem; max-width: 600px; margin: 0 auto 16px;">
+              Güçlü gövde, bitter çikolata ve fındık notaları. Yoğun ve keskin bir kahve deneyimi arayanlar için.
+            </p>
+            <button type="button" class="btn btn-primary btn-sm" id="quizAddBtn">
+              Sepete Ekle & Dene
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BREWING METHODS SHOWCASE ================= -->
+  <section class="brewing-section" id="brewingSection">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Demleme Bilimi</div>
+        <h2>Hassas <span class="text-gold-gradient">Demleme Metotlarımız</span></h2>
+        <p>Her çekirdeğin kimyasına uygun su sıcaklığı, mikronluk öğütüm ve temas süresi hesaplanır.</p>
+      </div>
+
+      <div class="brewing-grid">
+        <!-- Method 1 -->
+        <div class="brewing-card reveal delay-1">
+          <div class="brewing-icon">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3>V60 Pour-Over</h3>
+          <p>Konik yapısı ve 60 derecelik spiral olukları sayesinde suyun çekirdeklerle ideal temasını sağlar; meyvemsi asiditeyi öne çıkarır.</p>
+          <ul class="brewing-specs">
+            <li><span>Su Sıcaklığı:</span> <span>93°C</span></li>
+            <li><span>Oran:</span> <span>1:16 (15g / 240g)</span></li>
+            <li><span>Demleme Süresi:</span> <span>2:45 dk</span></li>
+          </ul>
+        </div>
+
+        <!-- Method 2 -->
+        <div class="brewing-card reveal delay-2">
+          <div class="brewing-icon">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>Chemex Drip</h3>
+          <p>Kalın özel filtresi sayesinde tüm kahve yağlarını ve tortuları süzer. Şarap berraklığında, pürüzsüz ve tatlı bir fincan sunar.</p>
+          <ul class="brewing-specs">
+            <li><span>Su Sıcaklığı:</span> <span>94°C</span></li>
+            <li><span>Oran:</span> <span>1:15 (30g / 450g)</span></li>
+            <li><span>Demleme Süresi:</span> <span>4:00 dk</span></li>
+          </ul>
+        </div>
+
+        <!-- Method 3 -->
+        <div class="brewing-card reveal delay-3">
+          <div class="brewing-icon">
+            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3>9-Bar Hassas Artisan Espresso</h3>
+          <p>Doygun basınç ve sabit ısı stabilitesiyle çekirdeğin krema ve derin çikolata katmanlarını saniyeler içinde bardağa taşır.</p>
+          <ul class="brewing-specs">
+            <li><span>Basınç:</span> <span>9 Bar Stabil</span></li>
+            <li><span>Dozaj:</span> <span>19g Giriş / 38g Çıkış</span></li>
+            <li><span>Ekstraksiyon:</span> <span>27-30 sn</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT & STORY SECTION ================= -->
+  <section class="story-section" id="storySection">
+    <div class="container story-grid reveal">
+      <div class="story-img-collage">
+        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" alt="Coffee Roasting Machine Yusuf Caffee" class="story-main-img">
+        <div class="story-stat-card">
+          <h3>2018'den</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-top:4px;">Beri Tutkuyla Kavuruyoruz</p>
+        </div>
+      </div>
+
+      <div class="story-content">
+        <div class="section-badge">Zanaat & Felsefe</div>
+        <h2>Biz Kahveyi Sadece Yapmıyoruz, <span class="text-gold-gradient">Yaşıyoruz</span></h2>
+        <p>
+          Yusuf Caffee, İstanbul'un kalbinde küçük bir kavurma atölyesi olarak başladı. Amacımız basitti: Endüstriyel kahvelerin acı ve yanık lezzetine karşılık, çekirdeğin tarladaki gerçek meyve kimliğini fincana aktarmak.
+        </p>
+        <p>
+          Kolombiya, Etiyopya, Guatemala ve Kosta Rika'daki çiftliklerle doğrudan bağ kurarak sürdürülebilir tarımı ve adil ticareti destekliyoruz.
+        </p>
+
+        <div class="story-points">
+          <div class="story-point-item">
+            <div class="point-icon">✓</div>
+            <div>
+              <strong>Mikro-Kavrum (Micro-batch Roasting):</strong>
+              <p style="color:var(--text-dim); font-size:0.85rem;">Her seferinde 5 kg'lık partiler halinde hassas ısı grafiğiyle kavuruyoruz.</p>
+            </div>
+          </div>
+
+          <div class="story-point-item">
+            <div class="point-icon">✓</div>
+            <div>
+              <strong>Sıfır Katkı Maddesi:</strong>
+              <p style="color:var(--text-dim); font-size:0.85rem;">Tatlandırıcı veya yapay aroma yok. Yalnızca nitelikli çekirdeğin saf lezzeti.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 32px;">
+          <a href="about.html" class="btn btn-outline">
+            Tüm Hikayemizi Oku
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TABLE RESERVATION SECTION ================= -->
+  <section class="reservation-section" id="reservationSection">
+    <div class="container">
+      <div class="reservation-box reveal">
+        <div class="res-info">
+          <div class="section-badge">Özel Alan</div>
+          <h3>Masasını Önceden Ayırt, <span class="text-gold-gradient">Sakinliğin Tadını Çıkar</span></h3>
+          <p>Kitap okumak, çalışmak veya dostlarınızla özel kahve tadımı yapmak için sakin ve konforlu masalarımız sizleri bekliyor.</p>
+
+          <div class="res-details">
+            <div class="res-detail-item">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Örnek Mah. Kahve Cad. No: 123/A, İstanbul</span>
+            </div>
+            <div class="res-detail-item">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>+90 (555) 000 00 00</span>
+            </div>
+            <div class="res-detail-item">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Her Gün: 08:00 - 23:00</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="reservation-form" id="reservationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="resName">Adınız</label>
+              <input type="text" id="resName" name="name" class="form-control" placeholder="Örn. Selin" required>
+            </div>
+            <div class="form-group">
+              <label for="resPhone">Telefon Numarası</label>
+              <input type="tel" id="resPhone" name="phone" class="form-control" placeholder="0555 000 00 00" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="resDate">Tarih</label>
+              <input type="date" id="resDate" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="resTime">Saat</label>
+              <select id="resTime" name="time" class="form-control" required>
+                <option value="10:00">10:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="16:00">16:00</option>
+                <option value="18:00">18:00</option>
+                <option value="20:00">20:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="resGuests">Kişi Sayısı</label>
+            <select id="resGuests" name="guests" class="form-control">
+              <option value="1">1 Kişi (Sessiz Çalışma)</option>
+              <option value="2" selected>2 Kişi</option>
+              <option value="3-4">3 - 4 Kişi</option>
+              <option value="5+">5+ Kişi (Grup Masası)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+            Masa Rezervasyonunu Onayla
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Müşteri Yorumları</div>
+        <h2>Kahveseverlerin <span class="text-gold-gradient">Gözünden Yusuf Caffee</span></h2>
+        <p>Her gün yüzlerce kahve tutkununa eşlik etmekten gurur duyuyoruz.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal delay-1">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"İstanbul'da içtiğim en temiz gövdeli Etiyopya V60 demlemesiydi. Mekanın müzikleri ve kahve kokusu insanı hemen dinginleştiriyor."</p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">B</div>
+            <div class="reviewer-info">
+              <h4>Burak</h4>
+              <span>Mimarlık Öğrencisi & Kahve Sever</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Flat white süt kıvamı tam bir ipek gibi. Yanında aldığımız fırından yeni çıkmış San Sebastian ise lezzet şöleniydi. Kesinlikle favorim."</p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">E</div>
+            <div class="reviewer-info">
+              <h4>Ece</h4>
+              <span>Yaratıcı Yönetmen</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Çekirdekleri eve de alıyorum, evde espresso makinemde aldığım crema ve koku mükemmel. Baristaların bilgi seviyesi hayranlık verici."</p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">M</div>
+            <div class="reviewer-info">
+              <h4>Murat</h4>
+              <span>Yazılım Mühendisi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CART DRAWER (SLIDE-OVER) ================= -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Alışveriş Sepeti">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        Sipariş Sepetiniz
+      </h3>
+      <button class="close-cart-btn" id="closeCartBtn" aria-label="Sepeti Kapat">&times;</button>
+    </div>
+
+    <div class="cart-body" id="cartItemsList">
+      <!-- Injected by script.js -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Ara Toplam:</span>
+        <span id="cartSubtotal">₺0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>KDV (%10 Dahil):</span>
+        <span>Dahil</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Toplam Tutar:</span>
+        <span id="cartTotal" class="text-gold-gradient">₺0.00</span>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+        Siparişi Tamamla & Masaya Çağır
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+            </svg>
+            <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+          </a>
+          <p>
+            Yusuf Caffee, özenle seçilen yeşil çekirdekleri yüksek ustalıkla işleyerek kahve severlerle buluşturan bağımsız zanaatkar roastery ve kafedir.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hızlı Bağlantılar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="menu.html">Kahve Menüsü</a></li>
+            <li><a href="about.html">Kavurma Hikayemiz</a></li>
+            <li><a href="contact.html">Masa Rezervasyonu</a></li>
+            <li><a href="#brewingSection">Demleme Rehberi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Çalışma Saatleri</h4>
+          <ul class="footer-links" style="color:var(--text-muted); font-size:0.9rem;">
+            <li>Pazartesi - Cuma: <strong>08:00 - 23:00</strong></li>
+            <li>Cumartesi: <strong>08:30 - 23:30</strong></li>
+            <li>Pazar: <strong>09:00 - 22:30</strong></li>
+            <li style="color:var(--accent-gold); margin-top:8px;">★ Özel Barista Workshopları Cumartesi günleri</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kahve Bülteni</h4>
+          <p style="color:var(--text-muted); font-size:0.88rem;">Yeni hasat çekirdekler ve %15 ilk sipariş kuponu için kaydolun.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="E-posta adresiniz" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary btn-sm">Katıl</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yusuf Caffee. Tüm hakları saklıdır. Bu proje konsept portfolyo tasarımıdır.</p>
+        <p>Crafted with Passion & Specialty Beans.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

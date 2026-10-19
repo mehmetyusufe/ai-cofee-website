@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim & Masa Rezervasyonu | Yusuf Caffee</title>
+  <meta name="description" content="Yusuf Caffee iletişim bilgileri, masa rezervasyonu ve çalışma saatleri.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 151, 85, 0.12) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      padding: 80px 0;
+    }
+
+    .contact-card-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: rgba(212, 151, 85, 0.12);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+    .info-item h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .info-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Map Mockup Card */
+    .map-mockup-card {
+      margin-top: 32px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #17130e;
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .map-overlay-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      background: rgba(22, 18, 13, 0.4);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1000px;
+      margin: 40px auto 0;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .faq-item h4 {
+      font-size: 1.05rem;
+      color: var(--accent-amber);
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .contact-main-grid, .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+        <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+          <li><a href="menu.html" class="nav-link">Özel Menü</a></li>
+          <li><a href="about.html" class="nav-link">Hikayemiz</a></li>
+          <li><a href="contact.html" class="nav-link active">Rezervasyon & İletişim</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="nav-status-badge" id="liveCafeStatus">
+          <span class="status-dot"></span>
+          <span>Açık (23:00'a kadar)</span>
+        </div>
+
+        <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Sepeti Aç">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+        </button>
+
+        <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Menüyü Göster">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero reveal">
+    <div class="container">
+      <div class="section-badge">Bize Ulaşın</div>
+      <h1>Masa Ayırtın & <span class="text-gold-gradient">Kahveye Bekliyoruz</span></h1>
+      <p>Örnek Mahallesi'nde taze kavrulmuş kahve kokuları arasında yerinizi şimdiden ayırtın.</p>
+    </div>
+  </section>
+
+  <!-- ================= MAIN CONTACT & RESERVATION SECTION ================= -->
+  <main class="container">
+    <div class="contact-main-grid">
+
+      <!-- Left Column: Contact Details & Location -->
+      <div class="contact-card-box reveal delay-1">
+        <div class="section-badge">Lokasyon & İletişim</div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 12px;">Örnek Roastery Şubemiz</h2>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          Örnek Mahallesi Kahve Caddesi üzerinde, zanaatkar kavurma atölyemiz ve ferah çalışma masalarımızla hizmetinizdeyiz.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h4>Adres</h4>
+              <p>Örnek Mahallesi, Kahve Caddesi No: 123/A, Örnek / İstanbul<br>(Örnek Metro İstasyonu Yakını)</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <h4>Telefon</h4>
+              <p>+90 (555) 000 00 00 / WhatsApp: +90 (555) 000 00 01</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h4>E-Posta</h4>
+              <p>example@example.com / iletisim@example.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Styled Map Card -->
+        <div class="map-mockup-card">
+          <div class="map-overlay-content">
+            <div style="font-size: 1.5rem; margin-bottom: 6px;">📍</div>
+            <strong style="color:var(--accent-amber); font-size:1rem;">Yusuf Caffee Roastery & Cafe Haritası</strong>
+            <p style="font-size:0.82rem; color:var(--text-muted); margin-top:4px;">
+              Örnek Meydanı'na yürüme 5 dakika mesafede.
+            </p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:10px;">
+              Google Haritalar'da Aç
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Booking Form -->
+      <div class="contact-card-box reveal delay-2">
+        <div class="section-badge">Online Rezervasyon</div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 12px;">Masa Rezervasyonu</h2>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom: 24px;">
+          Tarih ve saatinizi seçerek hızlıca yerinizi ayırtın. Rezervasyonunuz anında onaylanır.
+        </p>
+
+        <form class="reservation-form" id="reservationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="resName">Adınız</label>
+              <input type="text" id="resName" name="name" class="form-control" placeholder="Adınız" required>
+            </div>
+            <div class="form-group">
+              <label for="resPhone">Telefon</label>
+              <input type="tel" id="resPhone" name="phone" class="form-control" placeholder="05XX XXX XX XX" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="resDate">Tarih</label>
+              <input type="date" id="resDate" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="resTime">Saat</label>
+              <select id="resTime" name="time" class="form-control" required>
+                <option value="09:00">09:00</option>
+                <option value="11:00">11:00</option>
+                <option value="13:00">13:00</option>
+                <option value="15:00">15:00</option>
+                <option value="17:00">17:00</option>
+                <option value="19:00">19:00</option>
+                <option value="21:00">21:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="resGuests">Kişi Sayısı & Masa Tipi</label>
+            <select id="resGuests" name="guests" class="form-control">
+              <option value="1 Kişi (Çalışma Masası)">1 Kişi (Sessiz Çalışma & Prizli Masa)</option>
+              <option value="2 Kişi (Balkon Masası)" selected>2 Kişi (Sokak Manzaralı Masa)</option>
+              <option value="4 Kişi (İç Mekan Koltuk)">4 Kişi (Konforlu Salon)</option>
+              <option value="6+ Kişi (Grup Tadım Masası)">6+ Kişi (Özel Tadım Masası)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="resNotes">Özel İstek / Notunuz (İsteğe Bağlı)</label>
+            <textarea id="resNotes" name="notes" class="form-control" rows="3" placeholder="Örn: Bebek puseti için yer veya doğum günü tatlısı"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+            Masa Rezervasyonunu Onayla
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Merak Edilenler</div>
+        <h2>Sıkça Sorulan <span class="text-gold-gradient">Sorular</span></h2>
+        <p>Kafemiz, kahvelerimiz ve hizmetlerimiz hakkında en çok sorulan detaylar.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item reveal delay-1">
+          <h4>Çalışmak için uygun mu? Wi-Fi & priz var mı?</h4>
+          <p>Evet! Kafemizde fiber hızında ücretsiz Wi-Fi ve geniş çalışma masalarımızın hemen her noktasında priz ve USB girişleri mevcuttur.</p>
+        </div>
+
+        <div class="faq-item reveal delay-2">
+          <h4>Kafeye evcil hayvanımla gelebilir miyim?</h4>
+          <p>Kesinlikle! Yusuf Caffee %100 pet-friendly bir mekandır. Patili dostlarınız için taze su kaplarımız ve mama ikramlarımız her zaman hazırdır.</p>
+        </div>
+
+        <div class="faq-item reveal delay-3">
+          <h4>Bitkisel süt (vegan) alternatifleriniz var mı?</h4>
+          <p>Evet, tüm sıcak ve soğuk sütlü kahvelerimizde glütensiz yulaf sütü ve badem sütü alternatiflerimiz mevcuttur.</p>
+        </div>
+
+        <div class="faq-item reveal delay-4">
+          <h4>Evde demlemek için çekirdek öğütüyor musunuz?</h4>
+          <p>Elbette! Satın aldığınız tüm çekirdekleri evinizdeki demleme ekipmanınıza (Espresso, V60, Mokapot, French Press) uygun mikron ayarında ücretsiz öğütüyoruz.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CART DRAWER ================= -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Alışveriş Sepeti">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        Sipariş Sepetiniz
+      </h3>
+      <button class="close-cart-btn" id="closeCartBtn" aria-label="Sepeti Kapat">&times;</button>
+    </div>
+    <div class="cart-body" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Ara Toplam:</span>
+        <span id="cartSubtotal">₺0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>KDV (%10 Dahil):</span>
+        <span>Dahil</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Toplam Tutar:</span>
+        <span id="cartTotal" class="text-gold-gradient">₺0.00</span>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+        Siparişi Tamamla & Masaya Çağır
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+            </svg>
+            <span>YUSUF<span class="text-gold-gradient">.CAFFEE</span></span>
+          </a>
+          <p>Yusuf Caffee'de taze kahve kokusu eşliğinde unutulmaz anlar.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Sayfalar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="menu.html">Kahve Menüsü</a></li>
+            <li><a href="about.html">Kavurma Hikayemiz</a></li>
+            <li><a href="contact.html">Masa Rezervasyonu</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Çalışma Saatleri</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem;">Hafta içi: 08:00 - 23:00<br>Hafta sonu: 08:30 - 23:30</p>
+        </div>
+        <div class="footer-col">
+          <h4>Bülten</h4>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="E-posta" class="newsletter-input" required>
+            <button type="submit" class="btn btn-primary btn-sm">Katıl</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yusuf Caffee. Tüm hakları saklıdır. Bu proje konsept portfolyo tasarımıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
